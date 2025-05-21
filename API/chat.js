@@ -58,8 +58,10 @@
   <script>
     const messagesDiv = document.getElementById('messages');
     const input = document.getElementById('input');
-
-    function addMessage(sender, text) {
+    
+    apiKey: process.env.OPENAI_API_KEYAI,
+    
+  function addMessage(sender, text) {
       const div = document.createElement('div');
       div.className = 'message ' + sender;
       div.textContent = sender === 'user' ? 'أنت: ' + text : 'Sphinx: ' + text;
@@ -79,7 +81,7 @@
     async function getAIResponse(message) {
       addMessage('bot', '...يتم التفكير');
 
-      const apiKey = "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"; // ← حط مفتاحك هنا
+      const apiKey = "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"  
 
       try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
